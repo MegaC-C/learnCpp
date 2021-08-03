@@ -45,7 +45,7 @@ int main()
 
 		}
 		else
-			cout << "wrong unit" << endl;
+			cout << "wrong unit and start the exercises" << endl;
 
 
 
