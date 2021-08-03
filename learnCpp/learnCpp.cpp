@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 
-	double input, sum = 0, min = 99999999999, max = -999999999999;
+	double input, sum = 0, min = 99999999999, max = -9999999999999;
 	double meter = 0;
 	int count = 0;
 	vector < double >values;
