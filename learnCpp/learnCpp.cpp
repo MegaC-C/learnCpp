@@ -8,48 +8,19 @@ using namespace std;
 
 int main()
 {
-
-	double input, sum = 0, min = 99999999999, max = -9999999999999;
-	double meter = 0;
-	int count = 0;
-	vector < double >values;
-	string einheit;
-	while (cin >> input >> einheit)
-	{
-		cout << input << einheit << " = ";
-
-		if (einheit == "cm")
-			meter = input / 100;
-		else if (einheit == "in")
-			meter = input / 40;
-		else if (einheit == "ft")
-			meter = input / 3;
-		else if (einheit == "m")
-			meter = input;
-
-		if (einheit == "cm" || einheit == "in" || einheit == "ft" || einheit == "m")
-		{
-			values.push_back(meter);
-			sort(values.begin(), values.end());
-			sum += meter;
-			if (meter < min)
-				min = meter;
-			if (meter > max)
-				max = meter;
-			cout << meter << " meter" << "\nsumme: " << sum << "\nanzahl: " << values.
-				size() << "\nmax: " << max << "\nmin: " << min << endl;
-			for (int i = 0; i < values.size(); ++i)
-			{
-				cout << values[i] << endl;
-			}
-
-		}
-		else
-			cout << "wrong unit and start the exercises" << endl;
+	vector < double >temp;
+	for (double t; cin >> t;)
+		temp.push_back(t);
+	sort(temp.begin();
+		 temp.end();
+		);
+  for (double x:temp)
+		cout << x << endl;
 
 
 
-	}
+
+
 
 }
 
