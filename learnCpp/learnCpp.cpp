@@ -6,39 +6,35 @@
 using namespace std;
 
 
+double check(bool x, int i, double middle) {
+	if (x) return middle - (50.0 / pow(2, i));
+	else return middle + (50.0 / pow(2, i));
+}
+
+
 int main() {
 
-	double input, sum = 0, min = 99999999999, max = -999999999999;
-	double meter = 0;
-	int count = 0;
-	vector<double> values;
-	string einheit;
-	while (cin >> input >> einheit) {
-		cout << input << einheit << " = ";
+	while (1) {
+		double mid = 50;
+		char jein;		
+		bool smaller;
+		cout << "Denk an eine Nummer zwischen 0 und 100" << endl;
 
-		if (einheit == "cm") meter = input / 100;
-		else if (einheit == "in") meter = input / 40;
-		else if (einheit == "ft") meter = input / 3;
-		else if (einheit == "m") meter = input;
+		for (int i = 1; i < 8; ++i) {
 
-		if (einheit == "cm" || einheit == "in" || einheit == "ft" || einheit == "m") {
-			values.push_back(meter);
-			sort(values.begin(), values.end());
-			sum += meter;
-			if (meter < min) min = meter;
-			if (meter > max) max = meter;
-			cout << meter << " meter" << "\nsumme: " << sum << "\nanzahl: " << values.size() << "\nmax: " << max
-				<< "\nmin: " << min << endl;
-			for (int i = 0; i < values.size(); ++i) {
-				cout << values[i] << endl;
-			}
-
+			cout << "Ist die Nummer kleiner als " << mid << " ? (j)a oder (n)ein ?" << endl;
+			cin >> jein;
+			if (jein == 'j') smaller = true;
+			else smaller = false;
+			mid = check(smaller, i, mid);
 		}
-		else cout << "falsche einheit" << endl;
 
-
-
+		cout << "Deine Nummer ist:  " << round(mid) << endl << endl << endl;
 	}
+
+	
+
+	
 
 }
 
