@@ -29,7 +29,7 @@ int main() {
 			mid = check(smaller, i, mid);
 		}
 
-		cout << "Deine Nummer ist:  " << round(mid) << endl << endl << endl;
+		cout << "Deine Nummer ist:  " <<  round(mid) << endl << endl << endl;
 	}
 
 	
