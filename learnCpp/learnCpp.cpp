@@ -6,38 +6,29 @@
 using namespace std;
 
 
-double check(bool x, int i, double middle) {
-	if (x) return middle - (50.0 / pow(2, i));
-	else return middle + (50.0 / pow(2, i));
-}
 
 
 int main() {
 
-	while (1) {
-		double mid = 50;
-		char jein;		
-		bool smaller;
-		cout << "Denk an eine Nummer zwischen 0 und 100" << endl;
-
-		for (int i = 1; i < 8; ++i) {
-
-			cout << "Ist die Nummer kleiner als " << mid << " ? (j)a oder (n)ein ?" << endl;
-			cin >> jein;
-			if (jein == 'j') smaller = true;
-			else smaller = false;
-			mid = check(smaller, i, mid);
-		}
-
-		cout << "Deine Nummer ist:  " <<  round(mid) << endl << endl << endl;
-	}
-
+	int max=0;
+	vector<int> nums;
+	cin >> max;
+	for(int i=2; i<=max;++i) nums.push_back(i);
 	
-
+	for(int i=0; i<nums.size();++i) cout << nums[i]<<endl;
+	
+	for (int a=0; a<nums.size()-1; ++a){
+		for (int i=1;i<nums.size();++i){
+			if(nums[a+i]%nums[a]==0){
+				nums.erase(nums.begin()+i);
+				--i;
+			}
+		}
+	}
+	for(int i=0; i<nums.size();++i) cout << nums[i]<<endl;
 	
 
 }
 
-// Programm ausführen: STRG+F5 oder Menüeintrag "Debuggen" > "Starten ohne Debuggen starten"
-// Programm debuggen: F5 oder "Debuggen" > Menü "Debuggen starten"
+
 
